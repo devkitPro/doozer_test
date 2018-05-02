@@ -12,7 +12,7 @@ include $(DEVKITPRO)/devkitA64/base_tools
 # canned command sequence for binary data
 #---------------------------------------------------------------------------------
 define bin2o
-	bin2s $< 2>&1 | $(AS) - -o $(@)
+	bin2s $< 2>&1 | $(AS) -a - -o $(@)
 	echo "extern const u8" `(echo $(<F) | sed -e 's/^\([0-9]\)/_\1/' | tr . _)`"_end[];" > `(echo $(<F) | tr . _)`.h
 	echo "extern const u8" `(echo $(<F) | sed -e 's/^\([0-9]\)/_\1/' | tr . _)`"[];" >> `(echo $(<F) | tr . _)`.h
 	echo "extern const u32" `(echo $(<F) | sed -e 's/^\([0-9]\)/_\1/' | tr . _)`_size";" >> `(echo $(<F) | tr . _)`.h
