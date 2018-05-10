@@ -1,7 +1,7 @@
 {
   "targets": {
     "lib": {
-      "buildenv": "docker:devkitpro/devkitpro_toolchains",
+      "buildenv": "docker:devkitpro/devkita64",
 
       "environment": {
         "DEVKITPRO": "/opt/devkitpro",
